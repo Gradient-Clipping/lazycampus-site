@@ -1,10 +1,13 @@
-# lazycampus.com
+# Lazy Campus legacy landing page
 
-Static landing page for `lazycampus.com`.
+This repository retains the previous static landing page and its history.
+The active homepage source is
+[Gradient-Clipping/lazycampus-homepage](https://github.com/Gradient-Clipping/lazycampus-homepage).
 
-Every change merged to `main` is built as an immutable container image and
-published to Tencent Container Registry. Flux then updates the K3s deployment
-from the matching `1.0.<run-number>` tag.
+Changes to `main`, pull requests and manual workflow runs only verify that this
+legacy page builds. This repository no longer publishes container images or
+deploys to `lazycampus.com`. The new homepage publishes a separate
+`lazycampus/lazycampus-homepage` image consumed by the existing GitOps workload.
 
 ## Local verification
 
@@ -13,5 +16,4 @@ docker build -t lazycampus-site:local .
 docker run --rm -p 8080:8080 lazycampus-site:local
 ```
 
-Open <http://localhost:8080> and verify the page before merging.
-Static site for lazycampus.com
+Open <http://localhost:8080> to inspect the retained legacy page locally.
